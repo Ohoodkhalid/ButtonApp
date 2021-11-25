@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun decrease() {
+        count--
         when {
             count == 0 -> {
                 mytext.text = count.toString()
