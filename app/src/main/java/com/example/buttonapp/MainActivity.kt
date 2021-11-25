@@ -7,15 +7,15 @@ import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-    lateinit var mytext :TextView
-    lateinit var increaseButton :Button
-    lateinit var decreaseButton:Button
+    lateinit var mytext: TextView
+    lateinit var increaseButton: Button
+    lateinit var decreaseButton: Button
     var count = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         mytext = findViewById(R.id.tView)
+        mytext = findViewById(R.id.tView)
         increaseButton = findViewById(R.id.increaseButton)
         decreaseButton = findViewById(R.id.decreaseButton)
 
@@ -25,37 +25,39 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun increase(){
-      count++
+    fun increase() {
+        count++
         when {
-            count==0 -> {
-                mytext.setText(""+ count)
+            count == 0 -> {
+                mytext.text = count.toString()
                 mytext.setTextColor(Color.BLACK)
             }
-            count<0 -> {
-                mytext.setText(""+ count)
+            count < 0 -> {
+                mytext.text = count.toString()
                 mytext.setTextColor(Color.RED)
             }
             else -> {
-                mytext.setText(""+ count)
+                mytext.text = count.toString()
                 mytext.setTextColor(Color.GREEN)
             }
         }
 
     }
-    fun decrease(){
-      count--
-        if(count==0){
-            mytext.setText(""+ count)
-            mytext.setTextColor(Color.BLACK)
-        }
-        else if(count<0){
-            mytext.setText(""+ count)
-            mytext.setTextColor(Color.RED)
-        }
-        else {
-            mytext.setText(""+ count)
-            mytext.setTextColor(Color.GREEN)
+
+    fun decrease() {
+        when {
+            count == 0 -> {
+                mytext.text = count.toString()
+                mytext.setTextColor(Color.BLACK)
+            }
+            count < 0 -> {
+                mytext.text = count.toString()
+                mytext.setTextColor(Color.RED)
+            }
+            else -> {
+                mytext.text = count.toString()
+                mytext.setTextColor(Color.GREEN)
+            }
         }
     }
 }
